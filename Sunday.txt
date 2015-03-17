@@ -1,0 +1,20 @@
+void SundaySearch::find() 
+{
+    this->InitTab();
+    int i = 0;
+    int n = Text.size();
+    int m = Pattern.size();
+
+    while (i <= n - m) 
+    {
+        if (machesat(i)) 
+            {
+                occurances.push_back(i);
+            }
+        i += m;
+        if (i < n) 
+            {
+                i -= Tab[Text[i]];
+            }
+    }
+}
